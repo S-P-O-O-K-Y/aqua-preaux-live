@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical & Repair | Aqua Preaux Pool Services</title>
+  <meta name="description" content="Aqua Preaux Pool Services handles pool equipment startups, troubleshooting, repairs, automation control, and expert consultations in Baton Rouge." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .service-hero {
+      padding: 140px 0 80px;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark3) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at center, rgba(107,63,160,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .service-hero-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+    .service-hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; margin-bottom: 16px; }
+    .service-hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 580px; margin: 0 auto 32px; }
+    .breadcrumb { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--gold); }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 64px;
+    }
+    .detail-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      transition: var(--transition);
+    }
+    .detail-card:hover { transform: translateY(-6px); border-color: var(--purple-lt); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .detail-card-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .detail-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: var(--purple-lt); }
+    .detail-card p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
+    .detail-card ul { display: flex; flex-direction: column; gap: 10px; }
+    .detail-card li {
+      font-size: 0.9rem; color: var(--text-muted);
+      padding-left: 20px; position: relative;
+    }
+    .detail-card li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+    .equipment-section { background: var(--dark2); padding: 80px 0; }
+    .equipment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .equipment-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px 20px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .equipment-card:hover { border-color: rgba(107,63,160,0.5); transform: translateY(-4px); }
+    .equipment-card .eq-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .equipment-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .equipment-card p { font-size: 0.82rem; color: var(--text-muted); }
+
+    .cert-callout {
+      background: linear-gradient(135deg, rgba(107,63,160,0.12), rgba(107,63,160,0.06));
+      border: 1px solid rgba(107,63,160,0.25);
+      border-radius: var(--radius);
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .cert-callout h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }
+    .cert-callout p { color: var(--text-muted); max-width: 500px; margin: 0 auto; }
+
+    .cta-band {
+      background: linear-gradient(135deg, var(--dark3), var(--dark));
+      border-top: 1px solid var(--border);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .cta-band h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 16px; }
+    .cta-band p { color: var(--text-muted); margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 768px) {
+      .service-detail-grid { grid-template-columns: 1fr; }
+      .equipment-grid { grid-template-columns: 1fr 1fr; }
+      .service-hero { padding: 120px 0 60px; }
+      .cert-callout { padding: 28px 20px; }
+    }
+    @media (max-width: 480px) {
+      .equipment-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="https://img1.wsimg.com/isteam/ip/7774352c-6248-4e6a-8323-5aeb0bea501c/blob-9c0bfb0.png" alt="Aqua Preaux logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#certifications">Certifications</a></li>
+        <li><a href="../index.html#gallery">Gallery</a></li>
+        <li><a href="../index.html#faq">FAQ</a></li>
+        <li><a href="../index.html#contact" class="nav-cta">Get a Quote</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a> › <a href="../index.html#services">Services</a> › Technical & Repair
+      </div>
+      <span class="service-hero-icon">⚙️</span>
+      <span class="section-tag">Technical & Repair</span>
+      <h1>Expert Repairs & <span class="gradient-text">Technical Solutions</span></h1>
+      <p>When your pool equipment breaks down or isn't working right, our PHTA-certified technicians diagnose and fix it fast — with no guesswork and no overselling.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="../index.html#contact" class="btn btn-primary">📝 Request a Quote</a>
+        <a href="tel:2256102441" class="btn btn-outline">📞 Call (225) 610-2441</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES DETAIL -->
+  <section class="section" style="background: var(--dark);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Technical Services</span>
+        <h2>What We <span class="gradient-text">Fix & Handle</span></h2>
+        <p>From brand-new pool startups to complex equipment failures, we have the training and tools to get your system running right.</p>
+      </div>
+      <div class="service-detail-grid">
+
+        <div class="detail-card">
+          <div class="detail-card-icon">🚀</div>
+          <h3>Pool Startups</h3>
+          <p>Opening a new pool or restarting after winter? A proper startup ensures your equipment is primed and water is balanced from day one — preventing costly mistakes down the road.</p>
+          <ul>
+            <li>Initial water fill & chemical startup</li>
+            <li>Equipment priming & testing</li>
+            <li>Filter media inspection & prep</li>
+            <li>Pump & motor startup check</li>
+            <li>Salt cell activation (if applicable)</li>
+            <li>Full system run & verify</li>
+            <li>Owner walk-through & tips</li>
+          </ul>
+        </div>
+
+        <div class="detail-card" style="border-color: var(--purple-lt);">
+          <div class="detail-card-icon">🔍</div>
+          <h3>Equipment Troubleshooting & Repair</h3>
+          <p>Strange noises, low flow, error codes, or the pump just stopped? We diagnose accurately before recommending any repair — honest assessment, transparent pricing.</p>
+          <ul>
+            <li>Pump & motor diagnostics</li>
+            <li>Heater error code diagnosis</li>
+            <li>Filter integrity testing</li>
+            <li>Salt chlorinator cell testing</li>
+            <li>Leak detection (equipment pad)</li>
+            <li>Valve & plumbing checks</li>
+            <li>Impeller & seal replacement</li>
+            <li>Part sourcing & installation</li>
+          </ul>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-card-icon">🤖</div>
+          <h3>Automation Control</h3>
+          <p>Pool automation systems let you control everything — lights, pumps, heater, spa jets — from your phone or wall panel. We install, program, and troubleshoot leading brands.</p>
+          <ul>
+            <li>Pentair EasyTouch / IntelliCenter</li>
+            <li>Hayward OmniLogic setup</li>
+            <li>Jandy iAquaLink programming</li>
+            <li>Wireless remote configuration</li>
+            <li>Smartphone app integration</li>
+            <li>Variable speed pump scheduling</li>
+            <li>LED light control setup</li>
+          </ul>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-card-icon">💬</div>
+          <h3>Consultations</h3>
+          <p>Not sure what your pool needs? Buying a home with a pool? Thinking about an upgrade? We provide expert, honest advice — no sales pressure, no jargon.</p>
+          <ul>
+            <li>Pre-purchase pool inspections</li>
+            <li>Equipment upgrade recommendations</li>
+            <li>Energy efficiency assessments</li>
+            <li>Water chemistry education</li>
+            <li>DIY guidance for owners</li>
+            <li>Pool renovation planning</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- CERT CALLOUT -->
+      <div class="cert-callout">
+        <div style="font-size:2.5rem; margin-bottom:12px;">🏆</div>
+        <h3>PHTA Certified Technicians</h3>
+        <p>We hold Pool & Hot Tub Alliance (PHTA) certification — the gold standard for pool professionals. That means every diagnosis and repair follows industry best practices, protecting your investment and your family.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPMENT WE SERVICE -->
+  <section class="equipment-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Equipment</span>
+        <h2>Brands & Systems <span class="gradient-text">We Service</span></h2>
+      </div>
+      <div class="equipment-grid">
+        <div class="equipment-card">
+          <div class="eq-icon">💧</div>
+          <h4>Pumps & Motors</h4>
+          <p>Pentair, Hayward, Jandy — single & variable speed</p>
+        </div>
+        <div class="equipment-card">
+          <div class="eq-icon">🔥</div>
+          <h4>Heaters</h4>
+          <p>Gas, electric heat pump, and solar heaters</p>
+        </div>
+        <div class="equipment-card">
+          <div class="eq-icon">🌀</div>
+          <h4>Filters</h4>
+          <p>Sand, cartridge, and DE (diatomaceous earth) filters</p>
+        </div>
+        <div class="equipment-card">
+          <div class="eq-icon">⚡</div>
+          <h4>Salt Systems</h4>
+          <p>Chlorine generators & salt cell replacement</p>
+        </div>
+        <div class="equipment-card">
+          <div class="eq-icon">💡</div>
+          <h4>LED Lighting</h4>
+          <p>Color LED pool & spa light installation/repair</p>
+        </div>
+        <div class="equipment-card">
+          <div class="eq-icon">📱</div>
+          <h4>Automation</h4>
+          <p>Pentair, Hayward, Jandy smart control systems</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="container">
+      <span class="section-tag">Need a Repair?</span>
+      <h2>Get Your Equipment <span class="gradient-text">Running Again</span></h2>
+      <p>Call or get a quote online and we'll get a certified tech out to you fast — usually same or next day.</p>
+      <div class="cta-actions">
+        <a href="../index.html#contact" class="btn btn-primary">📝 Request a Quote</a>
+        <a href="tel:2256102441" class="btn btn-outline">📞 (225) 610-2441</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="https://img1.wsimg.com/isteam/ip/7774352c-6248-4e6a-8323-5aeb0bea501c/blob-9c0bfb0.png" alt="Aqua Preaux logo" class="footer-logo" />
+        <p>Your Local Pool Preauxs — serving Baton Rouge and surrounding areas.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="maintenance.html">Maintenance & Cleaning</a></li>
+          <li><a href="specialized.html">Specialized Cleaning</a></li>
+          <li><a href="technical.html">Technical & Repair</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:2256102441">📞 (225) 610-2441</a></li>
+          <li><a href="mailto:aquapreauxpoolservices@gmail.com">✉️ Email Us</a></li>
+          <li>🕐 Mon–Sun · 7 AM – 8 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Aqua Preaux Pool Services LLC · All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y <= 60) navbar.classList.remove('hidden','scrolled');
+      else if (y > lastScrollY) navbar.classList.add('hidden');
+      else { navbar.classList.remove('hidden'); navbar.classList.add('scrolled'); }
+      lastScrollY = y;
+    });
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>

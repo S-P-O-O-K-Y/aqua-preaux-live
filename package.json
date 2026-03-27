@@ -1,0 +1,8 @@
+{
+  "name": "aqua-preaux",
+  "version": "1.0.0",
+  "description": "Aqua Preaux Pool Services website",
+  "scripts": {
+    "dev": "npx serve . -p 3000"
+  }
+}

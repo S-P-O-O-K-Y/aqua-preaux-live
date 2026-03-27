@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintenance & Cleaning | Aqua Preaux Pool Services</title>
+  <meta name="description" content="Aqua Preaux Pool Services offers weekly full-service maintenance, residential cleaning, and commercial pool cleaning in Baton Rouge and surrounding areas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .service-hero {
+      padding: 140px 0 80px;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark3) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at center, rgba(255,209,0,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .service-hero-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .service-hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; margin-bottom: 16px; }
+    .service-hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 580px; margin: 0 auto 32px; }
+    .breadcrumb { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--gold); }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 64px;
+    }
+    .detail-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      transition: var(--transition);
+    }
+    .detail-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .detail-card-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .detail-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: var(--gold); }
+    .detail-card p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
+    .detail-card ul { display: flex; flex-direction: column; gap: 10px; }
+    .detail-card li {
+      font-size: 0.9rem; color: var(--text-muted);
+      padding-left: 20px; position: relative;
+    }
+    .detail-card li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+    .why-section { background: var(--dark2); padding: 80px 0; }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .why-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .why-card .why-icon { font-size: 2rem; margin-bottom: 12px; }
+    .why-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .why-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+    .cta-band {
+      background: linear-gradient(135deg, var(--dark3), var(--dark));
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .cta-band h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 16px; }
+    .cta-band p { color: var(--text-muted); margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 768px) {
+      .service-detail-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .service-hero { padding: 120px 0 60px; }
+    }
+    @media (max-width: 480px) {
+      .why-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="https://img1.wsimg.com/isteam/ip/7774352c-6248-4e6a-8323-5aeb0bea501c/blob-9c0bfb0.png" alt="Aqua Preaux logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#certifications">Certifications</a></li>
+        <li><a href="../index.html#gallery">Gallery</a></li>
+        <li><a href="../index.html#faq">FAQ</a></li>
+        <li><a href="../index.html#contact" class="nav-cta">Get a Quote</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a> › <a href="../index.html#services">Services</a> › Maintenance & Cleaning
+      </div>
+      <span class="service-hero-icon">🧹</span>
+      <span class="section-tag">Maintenance & Cleaning</span>
+      <h1>Keep Your Pool <span class="gradient-text">Pristine Year-Round</span></h1>
+      <p>Regular, professional pool maintenance is the key to clean water, long-lasting equipment, and worry-free swimming — all season long.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="../index.html#contact" class="btn btn-primary">📝 Request a Quote</a>
+        <a href="tel:2256102441" class="btn btn-outline">📞 Call (225) 610-2441</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES DETAIL -->
+  <section class="section" style="background: var(--dark);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What's Included</span>
+        <h2>Our <span class="gradient-text">Cleaning Services</span></h2>
+        <p>We offer three maintenance tiers to fit every pool size, budget, and schedule.</p>
+      </div>
+      <div class="service-detail-grid">
+
+        <div class="detail-card">
+          <div class="detail-card-icon">📅</div>
+          <h3>Weekly Full Service</h3>
+          <p>Our most popular plan. We come out every week to keep your pool in perfect condition — you just enjoy it.</p>
+          <ul>
+            <li>Water chemistry testing & balancing</li>
+            <li>Brushing walls, steps & waterline</li>
+            <li>Skimming surface debris</li>
+            <li>Vacuuming pool floor</li>
+            <li>Emptying skimmer & pump baskets</li>
+            <li>Backwashing filter as needed</li>
+            <li>Equipment visual inspection</li>
+            <li>Written service report every visit</li>
+          </ul>
+        </div>
+
+        <div class="detail-card" style="border-color: var(--gold);">
+          <div class="detail-card-icon">🏠</div>
+          <h3>Residential Cleaning</h3>
+          <p>Tailored care for homeowners who want a beautiful pool without lifting a finger. Flexible scheduling to fit your life.</p>
+          <ul>
+            <li>Full chemical analysis & treatment</li>
+            <li>Algae prevention treatments</li>
+            <li>Tile & waterline brushing</li>
+            <li>Debris removal & vacuuming</li>
+            <li>Filter inspection & cleaning</li>
+            <li>Pump & heater check</li>
+            <li>Smartphone-friendly service updates</li>
+            <li>Same technician every visit</li>
+          </ul>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-card-icon">🏢</div>
+          <h3>Commercial Cleaning</h3>
+          <p>Hotels, gyms, HOAs, and apartment complexes rely on us to keep shared pools safe, compliant, and guest-ready.</p>
+          <ul>
+            <li>Health code compliance checks</li>
+            <li>High-frequency service schedules</li>
+            <li>Detailed log & service records</li>
+            <li>Chemical bulk management</li>
+            <li>Multi-pool property coordination</li>
+            <li>Emergency response availability</li>
+            <li>Customized service agreements</li>
+            <li>Priority scheduling</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY REGULAR MAINTENANCE -->
+  <section class="why-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why It Matters</span>
+        <h2>The Benefits of <span class="gradient-text">Regular Service</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">💧</div>
+          <h4>Crystal Clear Water</h4>
+          <p>Balanced chemistry means no green water, cloudy haze, or algae buildup.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🛠️</div>
+          <h4>Longer Equipment Life</h4>
+          <p>Proper maintenance prevents pump, filter, and heater damage from imbalanced water.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🏊</div>
+          <h4>Safer Swimming</h4>
+          <p>Correct sanitizer levels protect swimmers from harmful bacteria and viruses.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💰</div>
+          <h4>Saves You Money</h4>
+          <p>Preventative maintenance is far cheaper than emergency repairs or full pool restoration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="container">
+      <span class="section-tag">Ready to Get Started?</span>
+      <h2>Let's Keep Your Pool <span class="gradient-text">Looking Its Best</span></h2>
+      <p>Request a free quote today. We'll assess your pool and recommend the perfect maintenance plan.</p>
+      <div class="cta-actions">
+        <a href="../index.html#contact" class="btn btn-primary">📝 Get a Quote</a>
+        <a href="tel:2256102441" class="btn btn-outline">📞 (225) 610-2441</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="https://img1.wsimg.com/isteam/ip/7774352c-6248-4e6a-8323-5aeb0bea501c/blob-9c0bfb0.png" alt="Aqua Preaux logo" class="footer-logo" />
+        <p>Your Local Pool Preauxs — serving Baton Rouge and surrounding areas.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="maintenance.html">Maintenance & Cleaning</a></li>
+          <li><a href="specialized.html">Specialized Cleaning</a></li>
+          <li><a href="technical.html">Technical & Repair</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:2256102441">📞 (225) 610-2441</a></li>
+          <li><a href="mailto:aquapreauxpoolservices@gmail.com">✉️ Email Us</a></li>
+          <li>🕐 Mon–Sun · 7 AM – 8 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Aqua Preaux Pool Services LLC · All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y <= 60) navbar.classList.remove('hidden','scrolled');
+      else if (y > lastScrollY) navbar.classList.add('hidden');
+      else { navbar.classList.remove('hidden'); navbar.classList.add('scrolled'); }
+      lastScrollY = y;
+    });
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>

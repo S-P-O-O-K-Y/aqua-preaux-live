@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specialized Cleaning | Aqua Preaux Pool Services</title>
+  <meta name="description" content="Aqua Preaux Pool Services specializes in one-time cleanings, Green to Clean treatments, drain & fill, filter cleaning, and tile brushing in Baton Rouge." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .service-hero {
+      padding: 140px 0 80px;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark3) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at center, rgba(0,180,200,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .service-hero-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+    .service-hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; margin-bottom: 16px; }
+    .service-hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 580px; margin: 0 auto 32px; }
+    .breadcrumb { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--gold); }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .services-list { display: flex; flex-direction: column; gap: 32px; margin-bottom: 64px; }
+    .service-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      align-items: start;
+      transition: var(--transition);
+    }
+    .service-row:hover { border-color: var(--teal); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+    .service-row.featured { border-color: var(--gold); background: linear-gradient(145deg, #1E1E2E, #22223A); }
+    .service-row-left { text-align: center; }
+    .service-row-icon { font-size: 3rem; margin-bottom: 12px; display: block; }
+    .service-row-left h3 { font-size: 1.3rem; font-weight: 700; color: var(--teal); margin-bottom: 8px; }
+    .service-row.featured .service-row-left h3 { color: var(--gold); }
+    .service-row-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #000;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 999px;
+      margin-top: 8px;
+    }
+    .service-row-right h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .service-row-right p { font-size: 0.93rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
+    .service-row-right ul { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .service-row-right li {
+      font-size: 0.88rem; color: var(--text-muted);
+      padding-left: 20px; position: relative;
+    }
+    .service-row-right li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+    .process-section { background: var(--dark2); padding: 80px 0; }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .process-step {
+      text-align: center;
+      padding: 28px 20px;
+      position: relative;
+    }
+    .step-num {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dk));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 800;
+      color: #000;
+      margin: 0 auto 16px;
+    }
+    .process-step h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .process-step p { font-size: 0.85rem; color: var(--text-muted); }
+
+    .cta-band {
+      background: linear-gradient(135deg, var(--dark3), var(--dark));
+      border-top: 1px solid var(--border);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .cta-band h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 16px; }
+    .cta-band p { color: var(--text-muted); margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 768px) {
+      .service-row { grid-template-columns: 1fr; gap: 24px; padding: 28px 20px; }
+      .service-row-right ul { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .service-hero { padding: 120px 0 60px; }
+    }
+    @media (max-width: 480px) {
+      .process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="https://img1.wsimg.com/isteam/ip/7774352c-6248-4e6a-8323-5aeb0bea501c/blob-9c0bfb0.png" alt="Aqua Preaux logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#certifications">Certifications</a></li>
+        <li><a href="../index.html#gallery">Gallery</a></li>
+        <li><a href="../index.html#faq">FAQ</a></li>
+        <li><a href="../index.html#contact" class="nav-cta">Get a Quote</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a> › <a href="../index.html#services">Services</a> › Specialized Cleaning
+      </div>
+      <span class="service-hero-icon">✨</span>
+      <span class="section-tag">Most Popular · Specialized Cleaning</span>
+      <h1>Turn Any Pool Into a <span class="gradient-text">Sparkling Oasis</span></h1>
+      <p>From neglected green pools to full drain-and-fills, our specialized cleaning services tackle what weekly maintenance can't — with fast, visible results.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="../index.html#contact" class="btn btn-primary">📝 Request a Quote</a>
+        <a href="tel:2256102441" class="btn btn-outline">📞 Call (225) 610-2441</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES LIST -->
+  <section class="section" style="background: var(--dark);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Offer</span>
+        <h2>Specialized <span class="gradient-text">Services</span></h2>
+        <p>One-time or as-needed services to restore, refresh, and enhance your pool.</p>
+      </div>
+      <div class="services-list">
+
+        <div class="service-row featured">
+          <div class="service-row-left">
+            <span class="service-row-icon">🌿</span>
+            <h3>Green to Clean</h3>
+            <span class="service-row-badge">Most Requested</span>
+          </div>
+          <div class="service-row-right">
+            <h4>Pool turned green? We'll fix it — usually in 2–3 treatments.</h4>
+            <p>Green water is caused by algae growth, which happens when sanitizer levels drop. Our Green to Clean process uses targeted chemical treatment, brushing, and filtration to restore water clarity quickly and safely.</p>
+            <ul>
+              <li>Full water chemistry analysis</li>
+              <li>Shock treatment & algaecide application</li>
+              <li>Thorough wall & floor brushing</li>
+              <li>Filter cleaning & backwash</li>
+              <li>Follow-up visit to confirm clarity</li>
+              <li>Preventative maintenance plan offered</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-row-left">
+            <span class="service-row-icon">🧽</span>
+            <h3>One-Time Cleaning</h3>
+          </div>
+          <div class="service-row-right">
+            <h4>Need a fresh start before a party or after a long off-season?</h4>
+            <p>Our one-time cleaning is a deep-dive service that brings your pool back to its best — no subscription required. Perfect for seasonal reopening, special events, or new pool owners.</p>
+            <ul>
+              <li>Complete water testing & balancing</li>
+              <li>Brush all surfaces including waterline</li>
+              <li>Vacuum floor (manual or automatic)</li>
+              <li>Skim all surface debris</li>
+              <li>Empty & clean all baskets</li>
+              <li>Equipment inspection & report</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-row-left">
+            <span class="service-row-icon">🔄</span>
+            <h3>Drain & Fill</h3>
+          </div>
+          <div class="service-row-right">
+            <h4>Sometimes a complete water change is the best solution.</h4>
+            <p>When water has too many dissolved solids, stains, or chemical imbalances that can't be chemically resolved, a full drain and refill gives your pool a clean slate. We handle the entire process safely.</p>
+            <ul>
+              <li>Complete pool drain & disposal</li>
+              <li>Surface inspection while empty</li>
+              <li>Acid wash option for stains</li>
+              <li>Refill coordination</li>
+              <li>Initial chemical startup treatment</li>
+              <li>Full balance verification after fill</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-row-left">
+            <span class="service-row-icon">🔧</span>
+            <h3>Filter Cleaning & Replacement</h3>
+          </div>
+          <div class="service-row-right">
+            <h4>A clean filter is the heart of a healthy pool.</h4>
+            <p>Your filter removes dirt, debris, and contaminants from your water. When it's dirty or worn out, your pool pays the price. We clean, inspect, and replace filters so your system runs at peak performance.</p>
+            <ul>
+              <li>Filter teardown & inspection</li>
+              <li>Cartridge or DE grid cleaning</li>
+              <li>Backwash & rinse for sand filters</li>
+              <li>Worn element replacement</li>
+              <li>Pressure testing after service</li>
+              <li>Filter size & type recommendations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-row-left">
+            <span class="service-row-icon">🪨</span>
+            <h3>Tile Brushing</h3>
+          </div>
+          <div class="service-row-right">
+            <h4>Remove calcium buildup and restore your tile's original shine.</h4>
+            <p>Calcium scale and mineral deposits build up on pool tile over time, especially in areas with hard water. Our tile brushing service removes that unsightly white ring so your pool looks clean from top to bottom.</p>
+            <ul>
+              <li>Waterline tile scrubbing</li>
+              <li>Calcium & mineral scale removal</li>
+              <li>Safe chemical-assisted treatment</li>
+              <li>Grout line cleaning</li>
+              <li>Tile condition assessment</li>
+              <li>Sealing recommendation if needed</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">How It Works</span>
+        <h2>Our <span class="gradient-text">Simple Process</span></h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h4>Book Online or Call</h4>
+          <p>Request your service online or call us directly. We respond same day.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h4>We Assess Your Pool</h4>
+          <p>We evaluate your pool's current condition and recommend the right treatment.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h4>We Get to Work</h4>
+          <p>Our certified techs perform the service thoroughly — no shortcuts.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h4>You Enjoy the Results</h4>
+          <p>Swim in crystal-clear water and get a full report of what was done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="container">
+      <span class="section-tag">Ready?</span>
+      <h2>Get Your Pool <span class="gradient-text">Back in Shape</span></h2>
+      <p>Request a specialized cleaning today and see the difference Aqua Preaux makes.</p>
+      <div class="cta-actions">
+        <a href="../index.html#contact" class="btn btn-primary">📝 Get a Quote</a>
+        <a href="tel:2256102441" class="btn btn-outline">📞 (225) 610-2441</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="https://img1.wsimg.com/isteam/ip/7774352c-6248-4e6a-8323-5aeb0bea501c/blob-9c0bfb0.png" alt="Aqua Preaux logo" class="footer-logo" />
+        <p>Your Local Pool Preauxs — serving Baton Rouge and surrounding areas.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="maintenance.html">Maintenance & Cleaning</a></li>
+          <li><a href="specialized.html">Specialized Cleaning</a></li>
+          <li><a href="technical.html">Technical & Repair</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:2256102441">📞 (225) 610-2441</a></li>
+          <li><a href="mailto:aquapreauxpoolservices@gmail.com">✉️ Email Us</a></li>
+          <li>🕐 Mon–Sun · 7 AM – 8 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Aqua Preaux Pool Services LLC · All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y <= 60) navbar.classList.remove('hidden','scrolled');
+      else if (y > lastScrollY) navbar.classList.add('hidden');
+      else { navbar.classList.remove('hidden'); navbar.classList.add('scrolled'); }
+      lastScrollY = y;
+    });
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
